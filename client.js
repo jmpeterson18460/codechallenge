@@ -9,20 +9,21 @@ function readyNow(){
 
 function addDom (){
   counter ++;
-  let theDivider = $('<div><p>Number of times clicked: </div>');
-  $('.bling').append(theDivider);
+  let theDivider = $('<div class="money"><p class="bling">Number of times clicked: </div>');
+  $('.content').append(theDivider);
   theDivider.append(counter);
-  theDivider.append('<button id="changeo">Swap</button>');
-  theDivider.append('<button id="garbage">Delete</button>');
-  $('#changeo').on('click', changeColor);
-  $('.bling').on('click', '#garbage', removeDiv);
+  theDivider.append('<button class="cambio">Swap</button>');
+  theDivider.append('<button class="quitarse">Delete</button>');
+  $('.money').on('click', '.cambio', changeColor);
+  $('.money').on('click', '.quitarse', removeDiv);
 }
 
 function changeColor (){
-  $('.bling').css('background-color', 'yellow');
+  let y = $(this).parent();
+  y.toggleClass('highlight');
 }
 
 function removeDiv (){
-  let x = $(this).parent().parent();
+  let x = $(this).parent();
   x.empty();
 }
