@@ -9,14 +9,15 @@ function readyNow(){
 
 function addDom (){
   counter ++;
-  let theDivider = $('<div class="money"></div>');
+  let theDivider = $('<div><p>Number of times clicked: </div>');
   $('.content').append(theDivider);
-  createPar();
+  theDivider.append(counter);
+  //createPar();
 }
 
-function createPar (){
-  $('.money').empty();
-  let dollars = $('<p>Number of times clicked: </p>');
-  $('.money').append(dollars);
-  dollars.append(counter);
-}
+//function createPar (){
+  //$('.money').empty();
+  //let dollars = $('<p>Number of times clicked: </p>');
+  //$('.money').append(dollars);
+  //dollars.append(counter);
+//}
